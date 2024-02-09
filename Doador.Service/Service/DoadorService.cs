@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Doador.Service.Service
 {
-    public class DoadorService
+    public class DoadorService : IDoadorService
     {
         private readonly IDoadorRepository  _repository;
         public DoadorService(IDoadorRepository repository)

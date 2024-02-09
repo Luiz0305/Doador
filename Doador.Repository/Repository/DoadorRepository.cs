@@ -1,14 +1,7 @@
 ﻿using Dapper;
 using Doador.Domain.Commands;
 using Doador.Domain.Interfaces;
-using System;
-using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Data.SqlTypes;
-using System.Linq;
-using System.Reflection.Metadata.Ecma335;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Doador.Repository.Repository
 {
@@ -18,10 +11,10 @@ namespace Doador.Repository.Repository
         string Conexao = @"Server=(localdb)\mssqllocaldb;Database=Doador;Trusted_Connection=True;MultipleActiveResultSets=True";
         public async Task<string> PostAsync(DoadorCommand command)
         {
-            string queryInsert = @"DoadorTabela ( NomeDoador, CidadeDoador, EstadoDoador, CEPDoador, EmailDoador, TelefoneDoador)
-            values ('@NomeDoador', '@CidadeDoador', '@EstadoDoador', '@CEPDoador', '@EmailDoador', '@TelefoneDoador')";
+            string queryInsert = @"insert into DoadorTabela ( NomeDoador, CidadeDoador, EstadoDoador, CEPDoador, EmailDoador, TelefoneDoador)
+            values (@NomeDoador, @CidadeDoador, @EstadoDoador, @CEPDoador, @EmailDoador, @TelefoneDoador)";
             
-            using (SqlConnection conn = new SqlConnection(stringconnection))
+            using (SqlConnection conn = new SqlConnection(Conexao))
             {
                 conn.Execute(queryInsert, new
                 {
@@ -34,11 +27,6 @@ namespace Doador.Repository.Repository
                 });
             }
             return "cadastro realizado com sucesso";
-        }
-        public void PostAsync()
-        {
-
-        }
-        
+        }  
     }
 }

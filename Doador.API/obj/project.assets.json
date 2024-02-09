@@ -250,15 +250,42 @@
       "Doador.Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
-        "dependencies": {
-          "Dapper": "2.1.28",
-          "System.Data.SqlClient": "4.8.6"
-        },
         "compile": {
           "bin/placeholder/Doador.Domain.dll": {}
         },
         "runtime": {
           "bin/placeholder/Doador.Domain.dll": {}
+        }
+      },
+      "Doador.Repository/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "Dapper": "2.1.28",
+          "Doador.Domain": "1.0.0",
+          "Doador.Service": "1.0.0",
+          "System.Data.SqlClient": "4.8.6"
+        },
+        "compile": {
+          "bin/placeholder/Doador.Repository.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Doador.Repository.dll": {}
+        }
+      },
+      "Doador.Service/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "Dapper": "2.1.28",
+          "Doador.Domain": "1.0.0",
+          "System.Data.SqlClient": "4.8.6"
+        },
+        "compile": {
+          "bin/placeholder/Doador.Service.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Doador.Service.dll": {}
         }
       }
     }
@@ -931,12 +958,24 @@
       "type": "project",
       "path": "../Doador.Domain/Doador.Domain.csproj",
       "msbuildProject": "../Doador.Domain/Doador.Domain.csproj"
+    },
+    "Doador.Repository/1.0.0": {
+      "type": "project",
+      "path": "../Doador.Repository/Doador.Repository.csproj",
+      "msbuildProject": "../Doador.Repository/Doador.Repository.csproj"
+    },
+    "Doador.Service/1.0.0": {
+      "type": "project",
+      "path": "../Doador.Service/Doador.Service.csproj",
+      "msbuildProject": "../Doador.Service/Doador.Service.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net8.0": [
       "Dapper >= 2.1.28",
       "Doador.Domain >= 1.0.0",
+      "Doador.Repository >= 1.0.0",
+      "Doador.Service >= 1.0.0",
       "Swashbuckle.AspNetCore >= 6.4.0",
       "System.Data.SqlClient >= 4.8.6"
     ]
@@ -976,6 +1015,12 @@
           "projectReferences": {
             "C:\\Users\\DELL\\source\\repos\\Doador.API\\Doador.Domain\\Doador.Domain.csproj": {
               "projectPath": "C:\\Users\\DELL\\source\\repos\\Doador.API\\Doador.Domain\\Doador.Domain.csproj"
+            },
+            "C:\\Users\\DELL\\source\\repos\\Doador.API\\Doador.Repository\\Doador.Repository.csproj": {
+              "projectPath": "C:\\Users\\DELL\\source\\repos\\Doador.API\\Doador.Repository\\Doador.Repository.csproj"
+            },
+            "C:\\Users\\DELL\\source\\repos\\Doador.API\\Doador.Service\\Doador.Service.csproj": {
+              "projectPath": "C:\\Users\\DELL\\source\\repos\\Doador.API\\Doador.Service\\Doador.Service.csproj"
             }
           }
         }

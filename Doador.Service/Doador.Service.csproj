@@ -12,7 +12,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Doador.API\Doador.API.csproj" />
     <ProjectReference Include="..\Doador.Domain\Doador.Domain.csproj" />
   </ItemGroup>
 
